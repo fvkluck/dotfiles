@@ -6,8 +6,6 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Shougo/vimproc.vim.git'
-Plugin 'eagletmt/ghcmod-vim.git'
-Plugin 'eagletmt/neco-ghc'
 Plugin 'Shougo/neocomplete.vim.git'
 Plugin 'ervandew/supertab.git'
 Plugin 'scrooloose/nerdtree.git'
@@ -81,8 +79,3 @@ nmap <silent> <leader>bd :bd<CR>
 nmap <silent> <leader>m :CtrlPMRU<CR>
 
 nmap <silent> <leader>t :TagbarToggle<CR>
-
-map <silent> tw :GhcModTypeInsert<CR>
-map <silent> ts :GhcModSplitFunCase<CR>
-map <silent> tq :GhcModType<CR>
-map <silent> te :GhcModTypeClear<CR>
