@@ -59,6 +59,8 @@ filetype plugin indent on
 
 syntax enable
 
+let mapleader=","
+
 "Autocomplete automatically pops up 
 let g:acp_enableAtStartup = 0
 
@@ -72,8 +74,6 @@ set statusline+=%{CTagInStatusLine()}
 let g:easytags_cmd = '/usr/bin/ctags-exuberant'
 
 let g:rainbow_active = 1
-:inoremap ii <Esc>
-let mapleader=","
 
 set number
 set relativenumber
@@ -92,6 +92,12 @@ set shiftwidth=3
 set expandtab
 set incsearch
 
+"scroll offset
+set so=10
+set sidescrolloff=10
+
+set lazyredraw
+
 "To exclude target dir from ctrl-p search
 set wildignore+=*/target/*
 
@@ -103,6 +109,10 @@ let g:syntastic_check_on_wq = 0
 map <Leader>s :SyntasticToggleMode<CR>
 
 map <Leader>n :NERDTreeToggle<CR>
+
+:inoremap ii <Esc>
+
+nnoremap gh :w <CR>
 
 "edit .vimrc
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
