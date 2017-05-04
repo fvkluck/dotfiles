@@ -132,6 +132,7 @@ nmap <silent> <leader>t :TagbarToggle<CR>
 colorscheme darkblue
 
 nmap <F8> :TagbarToggle<CR>
+nmap <silent> <leader>q :q<CR>
 
 ""To be explored: very interesting  plugin on GitHub repo
 ""Plugin 'tpope/vim-fugitive'
