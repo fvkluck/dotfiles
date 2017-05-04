@@ -1,39 +1,82 @@
-set nocompatible
-filetype off
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
+" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call vundle#begin('~/.vim/bundle/')
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
+" let Vundle manage Vundle, required
+"" Keep Plugin commands between vundle#begin/end.
 Plugin 'VundleVim/Vundle.vim'
+
 Plugin 'Shougo/vimproc.vim.git'
+
+"autocompletion, with <tab>
 Plugin 'Shougo/neocomplete.vim.git'
 Plugin 'ervandew/supertab.git'
+
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'scrooloose/nerdcommenter.git'
-Plugin 'scrooloose/syntastic.git'
-Plugin 'ctrlpvim/ctrlp.vim.git'
-Plugin 'kien/rainbow_parentheses.vim.git'
 
+"syntax checker
+Plugin 'scrooloose/syntastic.git'
+
+"Fuzzy search
+Plugin 'ctrlpvim/ctrlp.vim.git'
+"Plugin 'kien/rainbow_parentheses.vim.git'
+Plugin 'luochen1990/rainbow'
+
+"Display function current cursor position is in
+Plugin 'mgedmin/chelper.vim'
+
+"Display git status in gutter
 Plugin 'airblade/vim-gitgutter'
+
+Plugin 'vim-airline/vim-airline'
+
+"Tagbar to show overview of file based on tags
+Plugin 'majutsushi/tagbar'
+
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'justinmk/vim-syntax-extra'
+Plugin 'slim-template/vim-slim.git'
+
+"Auto tags updater + syntax highlighting
+"easytags depends on vim-misc
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-easytags'
 
 "Plugins for Scala
 Plugin 'derekwyatt/vim-scala'
 
+"Alternate files quickly
+Plugin 'vim-scripts/a.vim'
+
 call vundle#end()
 filetype plugin indent on
 
+syntax enable
+
+"Autocomplete automatically pops up 
 let g:acp_enableAtStartup = 0
+
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntix#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+set statusline+=%{CTagInStatusLine()}
 
+"Specify ctags command
+let g:easytags_cmd = '/usr/bin/ctags-exuberant'
+
+let g:rainbow_active = 1
 :inoremap ii <Esc>
 let mapleader=","
 
 set number
 set relativenumber
-
 set wrap
 set linebreak
 set nolist
@@ -53,14 +96,10 @@ set incsearch
 set wildignore+=*/target/*
 
 "recommended by syntastic
-set statusline+=%#warningmsg
-set statusline+=%{SyntasticStatusLineFlag()}
-set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-"let g:syntastic_haskell_checker = ['HLint']
 map <Leader>s :SyntasticToggleMode<CR>
 
 map <Leader>n :NERDTreeToggle<CR>
@@ -79,3 +118,10 @@ nmap <silent> <leader>bd :bd<CR>
 nmap <silent> <leader>m :CtrlPMRU<CR>
 
 nmap <silent> <leader>t :TagbarToggle<CR>
+
+colorscheme darkblue
+
+nmap <F8> :TagbarToggle<CR>
+
+""To be explored: very interesting  plugin on GitHub repo
+""Plugin 'tpope/vim-fugitive'
