@@ -54,6 +54,11 @@ Plugin 'derekwyatt/vim-scala'
 "Alternate files quickly
 Plugin 'vim-scripts/a.vim'
 
+Plugin 'mbbill/undotree'
+
+"Precision colorscheme
+Plugin 'altercation/vim-colors-solarized'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -127,11 +132,12 @@ nmap <silent> <leader>bd :bd<CR>
 "most recently used
 nmap <silent> <leader>m :CtrlPMRU<CR>
 
-nmap <silent> <leader>t :TagbarToggle<CR>
-
-colorscheme darkblue
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
 
 nmap <F8> :TagbarToggle<CR>
+nmap <F5> :UndotreeToggle<CR>
 nmap <silent> <leader>q :q<CR>
 
 ""To be explored: very interesting  plugin on GitHub repo
