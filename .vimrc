@@ -59,6 +59,9 @@ Plugin 'mbbill/undotree'
 "Precision colorscheme
 Plugin 'altercation/vim-colors-solarized'
 
+"Most recently used
+Plugin 'yegappan/mru'
+
 call vundle#end()
 filetype plugin indent on
 
