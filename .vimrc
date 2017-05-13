@@ -62,6 +62,9 @@ Plugin 'altercation/vim-colors-solarized'
 "Most recently used
 Plugin 'yegappan/mru'
 
+"Add the surround motion see :help surround
+Plugin 'tpope/vim-surround'
+
 call vundle#end()
 filetype plugin indent on
 
