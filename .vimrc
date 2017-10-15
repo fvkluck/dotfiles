@@ -151,6 +151,9 @@ set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
 
+set path+=**
+set wildmenu
+
 nmap <F8> :TagbarToggle<CR>
 nmap <F5> :UndotreeToggle<CR>
 nmap <silent> <leader>q :q<CR>
