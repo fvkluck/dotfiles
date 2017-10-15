@@ -24,7 +24,6 @@ Plugin 'scrooloose/syntastic.git'
 
 "Fuzzy search
 Plugin 'ctrlpvim/ctrlp.vim.git'
-"Plugin 'kien/rainbow_parentheses.vim.git'
 Plugin 'luochen1990/rainbow'
 
 "Display function current cursor position is in
@@ -38,14 +37,8 @@ Plugin 'vim-airline/vim-airline'
 "Tagbar to show overview of file based on tags
 Plugin 'majutsushi/tagbar'
 
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'justinmk/vim-syntax-extra'
 Plugin 'slim-template/vim-slim.git'
-
-"Auto tags updater + syntax highlighting
-"easytags depends on vim-misc
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-easytags'
 
 "Plugins for Scala
 Plugin 'derekwyatt/vim-scala'
@@ -72,9 +65,6 @@ syntax enable
 let mapleader=","
 
 set statusline+=%{CTagInStatusLine()}
-
-"Specify ctags command
-let g:easytags_cmd = '/usr/bin/ctags-exuberant'
 
 let g:rainbow_active = 1
 
