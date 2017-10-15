@@ -14,7 +14,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Shougo/vimproc.vim.git'
 
 "autocompletion, with <tab>
-Plugin 'Shougo/neocomplete.vim.git'
 Plugin 'ervandew/supertab.git'
 
 Plugin 'scrooloose/nerdtree.git'
@@ -72,13 +71,6 @@ syntax enable
 
 let mapleader=","
 
-"Autocomplete automatically pops up 
-let g:acp_enableAtStartup = 0
-
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#sources#syntix#min_keyword_length = 3
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 set statusline+=%{CTagInStatusLine()}
 
 "Specify ctags command
@@ -102,6 +94,18 @@ set softtabstop=3
 set shiftwidth=3
 set expandtab
 set incsearch
+
+set omnifunc=syntaxcomplete#Complete
+"longest inserts longest common text of all matches, menuone makes menu come up
+"even with one match
+set completeopt=longest,menuone
+"Enter will select highlighted menu item
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+"Always keep a menu highlighted, so that if you keep typing characters, you
+"narrow the search
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' : 
+   \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+set tags +=~/.vim/systags
 
 "scroll offset
 set so=10
