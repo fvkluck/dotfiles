@@ -54,8 +54,24 @@ Plugin 'altercation/vim-colors-solarized'
 "Most recently used
 Plugin 'yegappan/mru'
 
-"Add the surround motion see :help surround
+""Add the surround motion see :help surround
 Plugin 'tpope/vim-surround'
+
+"More pleasant editing on git commit message
+Plugin 'rhysd/committia.vim'
+
+"Be able to handle encrypted text files easily
+Plugin 'jamessan/vim-gnupg'
+
+"Press s and two character to move to first occurence of those two characters.
+"Press ; to repeat.
+Plugin 'justinmk/vim-sneak'
+
+"Easy GDB debugging from within vim
+Plugin 'vim-scripts/Conque-GDB'
+
+"Julia support
+Plugin 'JuliaEditorSupport/julia-vim'
 
 call vundle#end()
 filetype plugin indent on
