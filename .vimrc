@@ -13,15 +13,6 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'Shougo/vimproc.vim.git'
 
-"autocompletion, with <tab>
-Plugin 'ervandew/supertab.git'
-
-Plugin 'scrooloose/nerdtree.git'
-Plugin 'scrooloose/nerdcommenter.git'
-
-"syntax checker
-Plugin 'scrooloose/syntastic.git'
-
 "Fuzzy search
 Plugin 'ctrlpvim/ctrlp.vim.git'
 Plugin 'luochen1990/rainbow'
@@ -121,12 +112,6 @@ set lazyredraw
 
 "To exclude target dir from ctrl-p search
 set wildignore+=*/target/*
-
-"recommended by syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 nmap <Leader>n :NERDTreeToggle<CR>
 
