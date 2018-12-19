@@ -77,9 +77,11 @@ set relativenumber
 set wrap
 set linebreak
 set nolist
+set tw=80
+set wrapmargin=0
+set formatoptions-=t
 
 set showmode
-set tw=80
 set smartcase
 set smarttab
 set smartindent
