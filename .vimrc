@@ -83,12 +83,19 @@ set formatoptions-=t
 
 set showmode
 set smartcase
-set smarttab
-set smartindent
+"Autoindent matches indent level of previous line, smartindent is a bonus on top
+"of that to try to react to the code you are editing
 set autoindent
-set softtabstop=3
-set shiftwidth=3
+set smartindent
+
+"tabstop controls how many columns a tab counts for
+set tabstop=2
+set softtabstop off
+"shiftwidth controls how many columns indent and de-indent operations >> and << use
+set shiftwidth=2
+"expandtab expands tab with spaces
 set expandtab
+
 set incsearch
 
 set omnifunc=syntaxcomplete#Complete
@@ -102,10 +109,6 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <expr> <C-n> pumvisible() ? '<C-n>' : 
    \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 set tags +=~/.vim/systags
-
-"scroll offset
-set so=10
-set sidescrolloff=10
 
 set lazyredraw
 
