@@ -158,3 +158,10 @@ set directory^=$HOME/.vim/swapfiles//
 set list listchars=tab:>-,trail:.,extends:>
 ""To be explored: very interesting  plugin on GitHub repo
 ""Plugin 'tpope/vim-fugitive'
+
+" persistent undo
+set undofile
+set undodir=$HOME/.vim/undo
+
+set undolevels=1000
+set undoreload=10000
