@@ -58,6 +58,9 @@ Plugin 'w0rp/ale'
 "Julia support
 Plugin 'JuliaEditorSupport/julia-vim'
 
+"Personal wiki in vim
+Plugin 'vimwiki/vimwiki'
+
 call vundle#end()
 filetype plugin indent on
 
