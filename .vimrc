@@ -144,6 +144,10 @@ colorscheme solarized
 set path+=**
 set wildmenu
 
+"allow folding with for example zm, zM, zr and zR, see :help fold
+set foldmethod=indent
+set foldlevelstart=0
+
 nmap <F8> :TagbarToggle<CR>
 nmap <F5> :UndotreeToggle<CR>
 nmap <silent> <leader>q :q<CR>
