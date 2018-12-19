@@ -134,6 +134,9 @@ nmap <silent> <leader>bd :bd<CR>
 "most recently used
 nmap <silent> <leader>m :CtrlPMRU<CR>
 
+"search and replace word under cursor
+:nnoremap <Leader>s :%s/\<<C-r><C-w>\>//gc<Left><Left><Left>
+
 set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
