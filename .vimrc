@@ -52,6 +52,9 @@ Plugin 'jamessan/vim-gnupg'
 "Press ; to repeat.
 Plugin 'justinmk/vim-sneak'
 
+"Asynchronous lint engine
+Plugin 'w0rp/ale'
+
 "Julia support
 Plugin 'JuliaEditorSupport/julia-vim'
 
