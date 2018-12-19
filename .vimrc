@@ -34,9 +34,6 @@ Plugin 'slim-template/vim-slim.git'
 "Plugins for Scala
 Plugin 'derekwyatt/vim-scala'
 
-"Alternate files quickly
-Plugin 'vim-scripts/a.vim'
-
 Plugin 'mbbill/undotree'
 
 "Precision colorscheme
