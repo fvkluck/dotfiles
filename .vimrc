@@ -152,6 +152,9 @@ nmap <F8> :TagbarToggle<CR>
 nmap <F5> :UndotreeToggle<CR>
 nmap <silent> <leader>q :q<CR>
 
+" Keep swapfiles in central location
+set directory^=$HOME/.vim/swapfiles//
+
 set list listchars=tab:>-,trail:.,extends:>
 ""To be explored: very interesting  plugin on GitHub repo
 ""Plugin 'tpope/vim-fugitive'
