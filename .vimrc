@@ -90,7 +90,6 @@ set smartindent
 
 "tabstop controls how many columns a tab counts for
 set tabstop=2
-set softtabstop off
 "shiftwidth controls how many columns indent and de-indent operations >> and << use
 set shiftwidth=2
 "expandtab expands tab with spaces
