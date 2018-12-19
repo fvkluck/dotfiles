@@ -52,9 +52,6 @@ Plugin 'jamessan/vim-gnupg'
 "Press ; to repeat.
 Plugin 'justinmk/vim-sneak'
 
-"Easy GDB debugging from within vim
-Plugin 'vim-scripts/Conque-GDB'
-
 "Julia support
 Plugin 'JuliaEditorSupport/julia-vim'
 
