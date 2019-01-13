@@ -116,8 +116,6 @@ set wildignore+=*/target/*
 
 nmap <Leader>n :NERDTreeToggle<CR>
 
-inoremap ii <Esc>
-
 nnoremap gh :w <CR>
 
 "edit .vimrc
