@@ -89,9 +89,9 @@ set autoindent
 set smartindent
 
 "tabstop controls how many columns a tab counts for
-set tabstop=2
+set tabstop=4
 "shiftwidth controls how many columns indent and de-indent operations >> and << use
-set shiftwidth=2
+set shiftwidth=4
 "expandtab expands tab with spaces
 set expandtab
 
