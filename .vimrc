@@ -162,3 +162,14 @@ set undodir=$HOME/.vim/undo
 
 set undolevels=1000
 set undoreload=10000
+
+"The Silver Searcher
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --nocolor
+
+    "use ag in CtrlP
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+    " ag is fast enough that CtrlP does not need caching
+    let g:ctrlp_use_caching = 0
+endif
