@@ -80,7 +80,7 @@ set relativenumber
 set wrap
 set linebreak
 set nolist
-set tw=80
+set tw=0
 set wrapmargin=0
 set formatoptions-=t
 
