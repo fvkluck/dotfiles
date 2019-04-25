@@ -61,6 +61,9 @@ Plugin 'JuliaEditorSupport/julia-vim'
 "Personal wiki in vim
 Plugin 'vimwiki/vimwiki'
 
+"Python PEP-8 checker
+Plugin 'nvie/vim-flake8'
+
 call vundle#end()
 filetype plugin indent on
 
