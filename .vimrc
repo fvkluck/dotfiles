@@ -5,8 +5,6 @@ call plug#begin()
 
 Plug 'Shougo/vimproc.vim.git'
 
-"Fuzzy search
-Plug 'ctrlpvim/ctrlp.vim.git'
 Plug 'luochen1990/rainbow'
 
 "Display function current cursor position is in
@@ -56,6 +54,9 @@ Plug 'vimwiki/vimwiki'
 "Python PEP-8 checker
 Plug 'nvie/vim-flake8'
 
+"Fuzzy finder
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -117,15 +118,11 @@ nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so %<CR>
 " clear highlight
 nmap <silent> <leader>/ :nohlsearch<CR>
-"CtrlPBuffer
-nmap <silent> <leader>. :CtrlPBuffer<CR>
-"delete buffer
-nmap <silent> <leader>bd :bd<CR>
-"most recently used
-nmap <silent> <leader>m :CtrlPMRU<CR>
 
 "search and replace word under cursor
 :nnoremap <Leader>s :%s/\<<C-r><C-w>\>//gc<Left><Left><Left>
+
+nnoremap <C-p> :Files<CR>
 
 set background=dark
 let g:solarized_termcolors=256
@@ -159,17 +156,10 @@ set undoreload=10000
 "The Silver Searcher
 if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
-
-    "use ag in CtrlP
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-    " ag is fast enough that CtrlP does not need caching
-    let g:ctrlp_use_caching = 0
 endif
 
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
-"define new command Ag to search for text and open quickfix window
-command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-nnoremap \ :Ag<SPACE>
+"Note that Ag is now a command of fzf
+nnoremap \ :Ag<CR>
