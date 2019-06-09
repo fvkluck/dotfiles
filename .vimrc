@@ -1,73 +1,63 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin('~/.vim/bundle/')
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+call plug#begin()
 
-" let Vundle manage Vundle, required
-"" Keep Plugin commands between vundle#begin/end.
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'Shougo/vimproc.vim.git'
+Plug 'Shougo/vimproc.vim.git'
 
 "Fuzzy search
-Plugin 'ctrlpvim/ctrlp.vim.git'
-Plugin 'luochen1990/rainbow'
+Plug 'ctrlpvim/ctrlp.vim.git'
+Plug 'luochen1990/rainbow'
 
 "Display function current cursor position is in
-Plugin 'mgedmin/chelper.vim'
+Plug 'mgedmin/chelper.vim'
 
 "Display git status in gutter
-Plugin 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 
-Plugin 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline'
 
 "Tagbar to show overview of file based on tags
-Plugin 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 
-Plugin 'justinmk/vim-syntax-extra'
-Plugin 'slim-template/vim-slim.git'
+Plug 'justinmk/vim-syntax-extra'
+Plug 'slim-template/vim-slim.git'
 
-"Plugins for Scala
-Plugin 'derekwyatt/vim-scala'
+"Plugs for Scala
+Plug 'derekwyatt/vim-scala'
 
-Plugin 'mbbill/undotree'
+Plug 'mbbill/undotree'
 
 "Precision colorscheme
-Plugin 'altercation/vim-colors-solarized'
+Plug 'altercation/vim-colors-solarized'
 
 ""Add the surround motion see :help surround
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 
 "More pleasant editing on git commit message
-Plugin 'rhysd/committia.vim'
+Plug 'rhysd/committia.vim'
 
 "Be able to handle encrypted text files easily
-Plugin 'jamessan/vim-gnupg'
+Plug 'jamessan/vim-gnupg'
 
 "Press s and two character to move to first occurence of those two characters.
 "Press ; to repeat.
-Plugin 'justinmk/vim-sneak'
+Plug 'justinmk/vim-sneak'
 
 "Asynchronous lint engine
-Plugin 'w0rp/ale'
+Plug 'w0rp/ale'
 
 "Julia support
-Plugin 'JuliaEditorSupport/julia-vim'
+Plug 'JuliaEditorSupport/julia-vim'
 
 "Personal wiki in vim
-Plugin 'vimwiki/vimwiki'
+Plug 'vimwiki/vimwiki'
 
 "Python PEP-8 checker
-Plugin 'nvie/vim-flake8'
+Plug 'nvie/vim-flake8'
 
-call vundle#end()
-filetype plugin indent on
 
-syntax enable
+call plug#end()
 
 let mapleader=","
 
