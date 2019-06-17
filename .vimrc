@@ -158,6 +158,10 @@ if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
 endif
 
+"define new command CaseSensitiveSearchAll to search for text and open quickfix window
+command -nargs=+ -complete=file -bar CaseSensitiveSearchAll silent! grep! <args>|cwindow|redraw!
+nnoremap | :CaseSensitiveSearchAll<SPACE>
+
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
