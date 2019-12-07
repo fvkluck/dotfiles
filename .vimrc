@@ -7,9 +7,6 @@ Plug 'Shougo/vimproc.vim.git'
 
 Plug 'luochen1990/rainbow'
 
-"Display function current cursor position is in
-Plug 'mgedmin/chelper.vim'
-
 "Display git status in gutter
 Plug 'airblade/vim-gitgutter'
 
@@ -63,8 +60,6 @@ Plug 'ludovicchabant/vim-gutentags'
 call plug#end()
 
 let mapleader=","
-
-set statusline+=%{CTagInStatusLine()}
 
 let g:rainbow_active = 1
 
@@ -147,6 +142,11 @@ set directory^=$HOME/.vim/swapfiles//
 set list listchars=tab:>-,trail:.,extends:>
 ""To be explored: very interesting  plugin on GitHub repo
 ""Plugin 'tpope/vim-fugitive'
+
+let g:ale_fix_on_save = 1
+let g:ale_linters = {
+            \ 'haskell': ['ghc', 'hlint'],
+            \}
 
 " persistent undo
 set undofile
