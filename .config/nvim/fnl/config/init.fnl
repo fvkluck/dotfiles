@@ -4,12 +4,23 @@
 
 ;space is reserved to be lead
 (nvim.set_keymap :n :<space> :<nop> {:noremap true})
+(nvim.set_keymap :n "gh" ":w<CR>" {:noremap true})
 (nvim.set_keymap :n :<leader>ev ":e $MYVIMRC<CR>" {:noremap true})
+
+(nvim.set_keymap :n :<F3> ":cprev<CR>" {:noremap true})
+(nvim.set_keymap :n :<F4> ":cnext<CR>" {:noremap true})
+
+(nvim.set_keymap :n :<localleader>/ ":nohlsearch<CR>" {:noremap true})
 
 ;sets a nvim global options
 (let [options
       {;tabs is space
        :expandtab true
+       ;show whitespace
+       :list true
+       :listchars "tab:>-,trail:.,extends:>"
+       ;easier use of system clipboard
+       :clipboard "unnamedplus"
        ;tab/indent size
        :tabstop 2
        :shiftwidth 2
@@ -22,8 +33,9 @@
        :smartcase true
        ;shared clipboard with linux
        :clipboard "unnamedplus"
-       ;show line numbers
+       ;relative line numbers except for current line
        :number true
+       :relativenumber true
        ;show line and column number
        :ruler true
        ;makes signcolumn always one column with signs and linenumber
