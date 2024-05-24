@@ -1,2 +1,5 @@
 .vim/.netrwhist
 .vim/undo/
+*.lua
+!.config/nvim/init.lua
+!.config/nvim/lua/plugins.lua
