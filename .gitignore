@@ -3,3 +3,4 @@
 *.lua
 !.config/nvim/init.lua
 !.config/nvim/lua/plugins.lua
+tags
