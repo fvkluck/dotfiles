@@ -5,6 +5,7 @@
 ;space is reserved to be lead
 (nvim.set_keymap :n :<space> :<nop> {:noremap true})
 (nvim.set_keymap :n "gh" ":w<CR>" {:noremap true})
+(nvim.set_keymap :n :<leader>q ":q<CR>" {:noremap true})
 
 (nvim.set_keymap :n :<leader>ev ":e $MYVIMRC<CR>" {:noremap true})
 (nvim.set_keymap :n :<leader>wd ":cd %:h<CR>" {:noremap true})
