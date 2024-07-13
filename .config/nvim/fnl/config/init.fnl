@@ -33,7 +33,7 @@
        :ignorecase true
        ; persistent undo
        :undofile true
-       :undodir "~/.vim/undo"
+       :undodir (core.str (vim.fn.expand "~") "/.vim/undo")
        :undolevels 1000
        :undoreload 10000
        ;smart search case
@@ -54,7 +54,6 @@
   (each [option value (pairs options)]
     (core.assoc vim.o option value)))
 
-;;(vim.cmd.colorscheme "tokyonight-storm")
-(vim.cmd.colorscheme "neosolarized")
+(vim.cmd.colorscheme "NeoSolarized")
 
 {}
