@@ -61,5 +61,7 @@
                                       :handlers handlers
                                       :before_init before_init
                                       :capabilities capabilities})
-              (lsp.pyright.setup {})
-              ))}]
+              (lsp.pyright.setup {:on_attach on_attach
+                                  :handlers handlers
+                                  :before_init before_init
+                                  :capabilities capabilities})))}]

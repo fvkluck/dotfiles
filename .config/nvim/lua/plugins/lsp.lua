@@ -41,6 +41,7 @@ local function _1_()
     return vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>li", ":lua require('telescope.builtin').lsp_implementations()<cr>", {noremap = true})
   end
   on_attach = _3_
-  return lsp.clojure_lsp.setup({on_attach = on_attach, handlers = handlers, before_init = before_init, capabilities = capabilities})
+  lsp.clojure_lsp.setup({on_attach = on_attach, handlers = handlers, before_init = before_init, capabilities = capabilities})
+  return lsp.pyright.setup({on_attach = on_attach, handlers = handlers, before_init = before_init, capabilities = capabilities})
 end
 return {{"neovim/nvim-lspconfig", config = _1_}}

@@ -2,17 +2,17 @@
 (local core (autoload :nfnl.core))
 
 ;space is reserved to be lead
-(nvim.set_keymap :n :<space> :<nop> {:noremap true})
-(nvim.set_keymap :n "gh" ":w<CR>" {:noremap true})
-(nvim.set_keymap :n :<leader>q ":q<CR>" {:noremap true})
+(vim.keymap.set :n :<space> :<nop> {:noremap true})
+(vim.keymap.set :n "gh" ":w<CR>" {:noremap true})
+(vim.keymap.set :n :<leader>q ":q<CR>" {:noremap true})
 
-(nvim.set_keymap :n :<leader>ev ":e $MYVIMRC<CR>" {:noremap true})
-(nvim.set_keymap :n :<leader>wd ":cd %:h<CR>" {:noremap true})
+(vim.keymap.set :n :<leader>ev ":e $MYVIMRC<CR>" {:noremap true})
+(vim.keymap.set :n :<leader>wd ":cd %:h<CR>" {:noremap true})
 
-(nvim.set_keymap :n :<F3> ":cprev<CR>" {:noremap true})
-(nvim.set_keymap :n :<F4> ":cnext<CR>" {:noremap true})
+(vim.keymap.set :n :<F3> ":cprev<CR>" {:noremap true})
+(vim.keymap.set :n :<F4> ":cnext<CR>" {:noremap true})
 
-(nvim.set_keymap :n :<localleader>/ ":nohlsearch<CR>" {:noremap true})
+(vim.keymap.set :n :<localleader>/ ":nohlsearch<CR>" {:noremap true})
 
 ;sets a nvim global options
 (let [options
@@ -31,18 +31,30 @@
        :completeopt "menuone,noselect"
        ;case insensitive search
        :ignorecase true
+       ; persistent undo
+       :undofile true
+       :undodir "~/.vim/undo"
+       :undolevels 1000
+       :undoreload 10000
        ;smart search case
        :smartcase true
        ;shared clipboard with linux
        :clipboard "unnamedplus"
-       ;relative line numbers except for current line
+       ;show line numbers
        :number true
        :relativenumber true
        ;show line and column number
        :ruler true
        ;makes signcolumn always one column with signs and linenumber
-       :signcolumn "number"}]
+       :signcolumn "number"
+       ; searching
+       :grepprg "ag --vimgrep --nogroup --nocolor -s --ignore tags"
+       ;for them
+       :termguicolors true}]
   (each [option value (pairs options)]
     (core.assoc vim.o option value)))
+
+;;(vim.cmd.colorscheme "tokyonight-storm")
+(vim.cmd.colorscheme "neosolarized")
 
 {}
