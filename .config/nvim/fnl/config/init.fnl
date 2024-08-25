@@ -9,8 +9,8 @@
 (vim.keymap.set :n :<leader>ev ":e $MYVIMRC<CR>" {:noremap true})
 (vim.keymap.set :n :<leader>wd ":cd %:h<CR>" {:noremap true})
 
-(vim.keymap.set :n :<F3> ":cprev<CR>" {:noremap true})
-(vim.keymap.set :n :<F4> ":cnext<CR>" {:noremap true})
+(vim.keymap.set :n :<C-N> ":cprev<CR>" {:noremap true})
+(vim.keymap.set :n :<C-M> ":cnext<CR>" {:noremap true})
 
 (vim.keymap.set :n :<localleader>/ ":nohlsearch<CR>" {:noremap true})
 
@@ -29,15 +29,11 @@
        :softtabstop 2
        ;settings needed for compe autocompletion
        :completeopt "menuone,noselect"
-       ;case insensitive search
-       :ignorecase true
        ; persistent undo
        :undofile true
        :undodir (core.str (vim.fn.expand "~") "/.vim/undo")
        :undolevels 1000
        :undoreload 10000
-       ;smart search case
-       :smartcase true
        ;shared clipboard with linux
        :clipboard "unnamedplus"
        ;show line numbers
