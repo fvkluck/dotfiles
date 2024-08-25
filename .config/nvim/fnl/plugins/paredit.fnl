@@ -12,8 +12,6 @@
   :config (fn []
             (let [paredit-fnl (require :nvim-paredit-fennel)]
               (paredit-fnl.setup)))}
- {1 :guns/vim-sexp}
- {1 :tpope/vim-sexp-mappings-for-regular-people}
 
  {1 :kylechui/nvim-surround
   :event "VeryLazy"

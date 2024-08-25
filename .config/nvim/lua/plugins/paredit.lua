@@ -11,4 +11,4 @@ local function _3_()
   local surround = require("nvim-surround")
   return surround.setup()
 end
-return {{"julienvincent/nvim-paredit", lazy = true, ft = {"clojure", "fennel"}, config = _1_}, {"julienvincent/nvim-paredit-fennel", dependencies = {"julienvincent/nvim-paredit"}, lazy = true, ft = {"fennel"}, config = _2_}, {"guns/vim-sexp"}, {"tpope/vim-sexp-mappings-for-regular-people"}, {"kylechui/nvim-surround", event = "VeryLazy", config = _3_}, {"windwp/nvim-autopairs", event = "InsertEnter", opts = {}}}
+return {{"julienvincent/nvim-paredit", lazy = true, ft = {"clojure", "fennel"}, config = _1_}, {"julienvincent/nvim-paredit-fennel", dependencies = {"julienvincent/nvim-paredit"}, lazy = true, ft = {"fennel"}, config = _2_}, {"kylechui/nvim-surround", event = "VeryLazy", config = _3_}, {"windwp/nvim-autopairs", event = "InsertEnter", opts = {}}}
