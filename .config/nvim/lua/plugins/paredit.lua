@@ -3,4 +3,4 @@ local function _1_()
   local surround = require("nvim-surround")
   return surround.setup()
 end
-return {{"kylechui/nvim-surround", event = "VeryLazy", config = _1_}, {"windwp/nvim-autopairs", event = "InsertEnter", opts = {}}}
+return {{"kylechui/nvim-surround", event = "VeryLazy", config = _1_}, {"altermo/ultimate-autopair.nvim", event = "InsertEnter"}}
