@@ -3,6 +3,6 @@ local function _1_()
   vim.g["conjure#mapping#doc_word"] = "K"
   vim.g["conjure#client#clojure#nrepl#eval#auto_require"] = false
   vim.g["conjure#client#clojure#nrepl#connection#auto_repl#enabled"] = false
-  return nil
+  return vim.keymap.set("n", "<localleader>ex", ":ConjureEval *e<CR>")
 end
 return {{"Olical/conjure", branch = "master", init = _1_}}
