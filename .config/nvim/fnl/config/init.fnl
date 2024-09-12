@@ -14,6 +14,8 @@
 
 (vim.keymap.set :n :<localleader>/ ":nohlsearch<CR>" {:noremap true})
 
+(vim.filetype.add {"bb" "babashka"})
+
 ;sets a nvim global options
 (let [options
       {;tabs is space
