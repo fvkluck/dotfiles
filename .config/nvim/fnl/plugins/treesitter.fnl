@@ -14,5 +14,6 @@
                                                     :json
                                                     :lua
                                                     :markdown
+                                                    :python
                                                     :yaml
                                                     :vimdoc]})))}]
