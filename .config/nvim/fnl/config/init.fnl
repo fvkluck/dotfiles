@@ -11,6 +11,7 @@
 
 (vim.keymap.set :n :<C-N> ":cprev<CR>" {:noremap true})
 (vim.keymap.set :n :<C-M> ":cnext<CR>" {:noremap true})
+(vim.keymap.set :n :<leader>k ":grep <C-R><C-W><CR>" {:noremap true})
 
 (vim.keymap.set :n :<localleader>/ ":nohlsearch<CR>" {:noremap true})
 
