@@ -53,6 +53,9 @@
   (each [option value (pairs options)]
     (core.assoc vim.o option value)))
 
+ ; fix netrw
+(core.assoc vim.g :netrw-keepdir 0)
+
 (vim.cmd.colorscheme "NeoSolarized")
 
 {}

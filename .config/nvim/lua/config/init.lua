@@ -18,5 +18,6 @@ do
     core.assoc(vim.o, option, value)
   end
 end
+core.assoc(vim.g, "netrw-keepdir", 0)
 vim.cmd.colorscheme("NeoSolarized")
 return {}
