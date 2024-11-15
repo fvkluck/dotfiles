@@ -7,6 +7,7 @@
   "cmp_luasnip": { "branch": "master", "commit": "05a9ab28b53f71d1aece421ef32fee2cb857a843" },
   "committia.vim": { "branch": "master", "commit": "a187b8633694027ab5ef8a834527d33093282f95" },
   "conjure": { "branch": "master", "commit": "6d2bc7f7b24c2c43d54f263bee7b9b08aef5d1a1" },
+  "emmet-vim": { "branch": "master", "commit": "6c511a8d7d2863066f32e25543e2bb99d505172c" },
   "fennel.vim": { "branch": "master", "commit": "30b9beabad2c4f09b9b284caf5cd5666b6b4dc89" },
   "fzf": { "branch": "master", "commit": "2191a44e36216791623cb166cc45f7a66f0bda34" },
   "fzf.vim": { "branch": "master", "commit": "c5ce7908ee86af7d4090d2007086444afb6ec1c9" },
