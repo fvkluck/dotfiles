@@ -14,8 +14,7 @@
 
 [{1 :neovim/nvim-lspconfig
   :config (fn []
-            (let [lsp (require :lspconfig)
-                  cmplsp (require :cmp_nvim_lsp)
+            (let [cmplsp (require :cmp_nvim_lsp)
                   handlers {"textDocument/publishDiagnostics"
                             (vim.lsp.with
                               vim.lsp.diagnostic.on_publish_diagnostics
@@ -57,11 +56,28 @@
               ;; https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 
               ;; Clojure
-              (lsp.clojure_lsp.setup {:on_attach on_attach
+              (vim.lsp.config :* {:on_attach on_attach
+                                  :handlers handlers
+                                  :before_init before_init
+                                  :capabilities capabilities})
+              (vim.lsp.set_log_level "warn")
+              (vim.lsp.config :clojure-lsp {:on_attach on_attach
                                       :handlers handlers
                                       :before_init before_init
                                       :capabilities capabilities})
-              (lsp.pyright.setup {:on_attach on_attach
-                                  :handlers handlers
-                                  :before_init before_init
-                                  :capabilities capabilities})))}]
+              (vim.lsp.config :ts-ls {:on_attach on_attach
+                                :init_options {:plugins [ {:name "@vue/typescript-plugin"
+                                                         :location "/opt/homebrew/lib/node_modules/@vue/typescript-plugin"
+                                                         :languages ["javascript" "typescript" "vue"]
+                                                         }]}
+                                :filetypes ["javascript" "typescript" "vue"]
+                                :handlers handlers
+                                :before_init before_init
+                                :capabilities capabilities})
+              (vim.lsp.config :pyright {:on_attach on_attach
+                                        :handlers handlers
+                                        :before_init before_init
+                                        :capabilities capabilities})
+              (vim.lsp.enable :pyright :volar :ts-ls :clojure-lsp)
+              (vim.lsp.enable :clojure-lsp)))}]
+

@@ -1,4 +1,4 @@
--- [nfnl] Compiled from fnl/plugins/lsp.fnl by https://github.com/Olical/nfnl, do not edit.
+-- [nfnl] fnl/plugins/lsp.fnl
 local function define_signs(prefix)
   local error = (prefix .. "SignError")
   local warn = (prefix .. "SignWarn")
@@ -11,7 +11,6 @@ local function define_signs(prefix)
 end
 define_signs("Diagnostic")
 local function _1_()
-  local lsp = require("lspconfig")
   local cmplsp = require("cmp_nvim_lsp")
   local handlers = {["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {severity_sort = true, update_in_insert = true, underline = true, virtual_text = false}), ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {border = "single"}), ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {border = "single"})}
   local capabilities = cmplsp.default_capabilities()
@@ -41,7 +40,12 @@ local function _1_()
     return vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>li", ":lua require('telescope.builtin').lsp_implementations()<cr>", {noremap = true})
   end
   on_attach = _3_
-  lsp.clojure_lsp.setup({on_attach = on_attach, handlers = handlers, before_init = before_init, capabilities = capabilities})
-  return lsp.pyright.setup({on_attach = on_attach, handlers = handlers, before_init = before_init, capabilities = capabilities})
+  vim.lsp.config("*", {on_attach = on_attach, handlers = handlers, before_init = before_init, capabilities = capabilities})
+  vim.lsp.set_log_level("warn")
+  vim.lsp.config("clojure-lsp", {on_attach = on_attach, handlers = handlers, before_init = before_init, capabilities = capabilities})
+  vim.lsp.config("ts-ls", {on_attach = on_attach, init_options = {plugins = {{name = "@vue/typescript-plugin", location = "/opt/homebrew/lib/node_modules/@vue/typescript-plugin", languages = {"javascript", "typescript", "vue"}}}}, filetypes = {"javascript", "typescript", "vue"}, handlers = handlers, before_init = before_init, capabilities = capabilities})
+  vim.lsp.config("pyright", {on_attach = on_attach, handlers = handlers, before_init = before_init, capabilities = capabilities})
+  vim.lsp.enable("pyright", "volar", "ts-ls", "clojure-lsp")
+  return vim.lsp.enable("clojure-lsp")
 end
 return {{"neovim/nvim-lspconfig", config = _1_}}
