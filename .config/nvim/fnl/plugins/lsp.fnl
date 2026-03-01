@@ -78,6 +78,9 @@
                                         :handlers handlers
                                         :before_init before_init
                                         :capabilities capabilities})
-              (vim.lsp.enable :pyright :volar :ts-ls :clojure-lsp)
+              (vim.lsp.config :rust-analyzer {:on_attach on_attach
+                                        :handlers handlers
+                                        :before_init before_init
+                                        :capabilities capabilities})
+              (vim.lsp.enable :pyright :volar :ts-ls :clojure-lsp :rust-analyzer)
               (vim.lsp.enable :clojure-lsp)))}]
-

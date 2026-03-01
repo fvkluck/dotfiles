@@ -45,7 +45,8 @@ local function _1_()
   vim.lsp.config("clojure-lsp", {on_attach = on_attach, handlers = handlers, before_init = before_init, capabilities = capabilities})
   vim.lsp.config("ts-ls", {on_attach = on_attach, init_options = {plugins = {{name = "@vue/typescript-plugin", location = "/opt/homebrew/lib/node_modules/@vue/typescript-plugin", languages = {"javascript", "typescript", "vue"}}}}, filetypes = {"javascript", "typescript", "vue"}, handlers = handlers, before_init = before_init, capabilities = capabilities})
   vim.lsp.config("pyright", {on_attach = on_attach, handlers = handlers, before_init = before_init, capabilities = capabilities})
-  vim.lsp.enable("pyright", "volar", "ts-ls", "clojure-lsp")
+  vim.lsp.config("rust_analyzer", {on_attach = on_attach, handlers = handlers, before_init = before_init, capabilities = capabilities})
+  vim.lsp.enable("pyright", "volar", "ts-ls", "clojure-lsp", "rust_analyzer")
   return vim.lsp.enable("clojure-lsp")
 end
 return {{"neovim/nvim-lspconfig", config = _1_}}
