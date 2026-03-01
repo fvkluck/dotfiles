@@ -9,11 +9,15 @@
                                                     :commonlisp
                                                     :dockerfile
                                                     :fennel
+                                                    :html
                                                     :java
                                                     :javascript
                                                     :json
+                                                    :latex
                                                     :lua
                                                     :markdown
+                                                    :markdown_inline
                                                     :python
+                                                    :typst
                                                     :yaml
                                                     :vimdoc]})))}]
