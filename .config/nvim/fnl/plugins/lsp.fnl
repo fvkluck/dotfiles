@@ -66,6 +66,7 @@
                                       :before_init before_init
                                       :capabilities capabilities})
               (vim.lsp.config :ts-ls {:on_attach on_attach
+                                      :cmd ["typescript-language-server" "--stdio"]
                                 :init_options {:plugins [ {:name "@vue/typescript-plugin"
                                                          :location "/opt/homebrew/lib/node_modules/@vue/typescript-plugin"
                                                          :languages ["javascript" "typescript" "vue"]
@@ -82,5 +83,8 @@
                                         :handlers handlers
                                         :before_init before_init
                                         :capabilities capabilities})
-              (vim.lsp.enable :pyright :volar :ts-ls :clojure-lsp :rust-analyzer)
+              (vim.lsp.enable :pyright)
+              (vim.lsp.enable :rust-analyzer)
+              (vim.lsp.enable :volar)
+              (vim.lsp.enable :ts-ls)
               (vim.lsp.enable :clojure-lsp)))}]
